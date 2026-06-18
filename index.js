@@ -1,3 +1,7 @@
 const binding = require('./binding')
 
-exports.hello = binding.hello
+exports.tcpCat = async function tcpCat(host, port, request) {
+  const result = await binding.tcpCat(host, port, request)
+
+  return Buffer.from(result)
+}

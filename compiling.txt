@@ -1,0 +1,12 @@
+rm -rf build prebuilds
+
+mkdir build
+cd build
+cmake ..
+cmake --build .
+
+cd ..
+
+mkdir -p prebuilds/linux-x64
+cp build/*.bare prebuilds/linux-x64/bare-addon.bare
+npm test
